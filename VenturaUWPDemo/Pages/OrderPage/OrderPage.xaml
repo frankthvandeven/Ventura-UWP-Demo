@@ -1,0 +1,88 @@
+﻿<Ventura:SmartPage
+    x:Class="Demo.Pages.OrderPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Ventura:SmartPage.Buttons>
+        <Ventura:ButtonSave Click="Save_Click" IsEnabled="{x:Bind Viewmodel.IsModelModified, Mode=OneWay}" />
+    </Ventura:SmartPage.Buttons>
+
+    <Ventura:SmartPagePanel>
+
+        <TextBlock Style="{StaticResource BaseTextBlockStyle}">Customer Information</TextBlock>
+
+        <Ventura:Form StretchRows="False">
+
+            <Ventura:FormField
+                FieldWidth="400"
+                Header="Customer ID"
+                RemarkPosition="Right"
+                RemarkWidth="200"
+                ZoombuttonClick="CustomerID_Zoom_Click">
+                <Ventura:InputInt64 x:Name="inputCustomerID" Value="{x:Bind Viewmodel.CustomerID, Mode=TwoWay}" />
+            </Ventura:FormField>
+
+            <Ventura:NewLine />
+
+            <Ventura:FormField Header="Ship Address">
+                <Ventura:InputString Value="{x:Bind Viewmodel.ShipAddress, Mode=TwoWay}" />
+            </Ventura:FormField>
+
+            <Ventura:NewLine />
+
+            <Ventura:FormField FieldWidth="200" Header="Ship Postal Code">
+                <Ventura:InputString Value="{x:Bind Viewmodel.ShipPostalCode, Mode=TwoWay}" />
+            </Ventura:FormField>
+            <Ventura:FormField Header="Ship City">
+                <Ventura:InputString Value="{x:Bind Viewmodel.ShipCity, Mode=TwoWay}" />
+            </Ventura:FormField>
+            <Ventura:FormField Header="Ship Region">
+                <Ventura:InputString Value="region" />
+            </Ventura:FormField>
+
+            <Ventura:FormField
+                FieldWidth="250"
+                Header="Ship Country"
+                RemarkPosition="Bottom"
+                ZoombuttonClick="CountryCode_Zoom_Click">
+                <Ventura:InputString
+                    x:Name="inputShipCountryCode"
+                    Formatting="ToUpper"
+                    MaxLength="2"
+                    Value="{x:Bind Viewmodel.ShipCountryCode, Mode=TwoWay}" />
+            </Ventura:FormField>
+        </Ventura:Form>
+
+        <TextBlock Style="{StaticResource BaseTextBlockStyle}">Order Status</TextBlock>
+
+        <Ventura:Form StretchRows="False">
+
+            <Ventura:FormField Header="Status">
+                <Ventura:InputString x:Name="iptOrderStatus" Value="Pending" />
+                <Ventura:FormField.Buttons>
+                    <Ventura:FormButtonZoom x:Name="btnOrderStatus" Click="BtnOrderStatus_Click" />
+                </Ventura:FormField.Buttons>
+            </Ventura:FormField>
+            <Ventura:FormField Header="Shipped Date">
+                <Ventura:InputDateNullable x:Name="inputShippedDate" Value="{x:Bind Viewmodel.ShippedDate, Mode=TwoWay}" />
+            </Ventura:FormField>
+
+        </Ventura:Form>
+
+
+        <TextBlock Style="{StaticResource BaseTextBlockStyle}">Testing Page Navigation</TextBlock>
+
+        <Ventura:ButtonBar>
+            <Ventura:SmartButton Click="OpenAnotherModal_Click">Open this dialog as Modal again</Ventura:SmartButton>
+            <Ventura:SmartButton Click="OpenAnotherSatellite_Click">Open this dialog as Satellite again</Ventura:SmartButton>
+            <Ventura:ButtonCloseTab Click="ForceCloseTab_Click">Close the Tab (unusual)</Ventura:ButtonCloseTab>
+        </Ventura:ButtonBar>
+
+
+    </Ventura:SmartPagePanel>
+</Ventura:SmartPage>

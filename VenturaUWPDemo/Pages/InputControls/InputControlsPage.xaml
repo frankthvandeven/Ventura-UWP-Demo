@@ -1,0 +1,111 @@
+﻿<Ventura:SmartPage
+    xmlns:Ventura="using:Ventura.Controls"
+    x:Class="Demo.Pages.InputControlsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+    <Ventura:SmartPagePanel>
+
+        <TextBlock Style="{StaticResource BaseTextBlockStyle}">Input Controls</TextBlock>
+
+        <Ventura:Form Margin="0,20,0,0" StretchRows="True">
+
+            <Ventura:FormField FieldWidth="200" Header="InputString (x:Bind to Viewmodel)">
+                <Ventura:InputString Value="{x:Bind Viewmodel.FieldString, Mode=TwoWay}" />
+            </Ventura:FormField>
+            <Ventura:FormField FieldWidth="200" Header="InputString (value not set)">
+                <Ventura:InputString />
+            </Ventura:FormField>
+            <Ventura:FormField FieldWidth="200" Header="InputString (value not set)">
+                <Ventura:InputString  />
+            </Ventura:FormField>
+            <Ventura:NewLine />
+
+            <Ventura:FormField FieldWidth="250" Header="InputDate (x:Bind to Viewmodel)">
+                <Ventura:InputDate Value="{x:Bind Viewmodel.FieldDateTime, Mode=TwoWay}" />
+            </Ventura:FormField>
+            <Ventura:FormField FieldWidth="250" Header="InputDate (value not set)">
+                <Ventura:InputDate />
+            </Ventura:FormField>
+            <Ventura:NewLine />
+
+            <Ventura:FormField FieldWidth="250" Header="InputDateNullable (x:Bind to Viewmodel)">
+                <Ventura:InputDateNullable Value="{x:Bind Viewmodel.FieldDateTimeNullable, Mode=TwoWay}" />
+            </Ventura:FormField>
+            <Ventura:FormField FieldWidth="250" Header="InputDateNullable (value not set)">
+                <Ventura:InputDateNullable />
+            </Ventura:FormField>
+            <Ventura:NewLine />
+
+            <Ventura:FormField FieldWidth="250" Header="InputDecimal (x:Bind to Viewmodel)">
+                <Ventura:InputDecimal Mask="999.9999"  Value="{x:Bind Viewmodel.FieldDecimal, Mode=TwoWay}" />
+            </Ventura:FormField>
+            <Ventura:FormField FieldWidth="250" Header="InputDecimal (value not set)">
+                <Ventura:InputDecimal Mask="999.9999" />
+            </Ventura:FormField>
+            <Ventura:NewLine />
+
+            <Ventura:FormField FieldWidth="250" Header="InputDecimalNullable (x:Bind to Viewmodel)">
+                <Ventura:InputDecimalNullable Mask="999.9999"  Value="{x:Bind Viewmodel.FieldDecimalNullable, Mode=TwoWay}" />
+            </Ventura:FormField>
+            <Ventura:FormField FieldWidth="250" Header="InputDecimalNullable (value not set)">
+                <Ventura:InputDecimalNullable Mask="999.9999" />
+            </Ventura:FormField>
+            <Ventura:NewLine />
+
+            <Ventura:FormField FieldWidth="250" Header="InputInt64 (x:Bind to Viewmodel)">
+                <Ventura:InputInt64 Value="{x:Bind Viewmodel.FieldInt64, Mode=TwoWay}" />
+            </Ventura:FormField>
+            <Ventura:FormField FieldWidth="250" Header="InputInt64 (value not set)">
+                <Ventura:InputInt64 MaxValue="100" />
+            </Ventura:FormField>
+            <Ventura:NewLine />
+
+            <Ventura:FormField FieldWidth="250" Header="InputInt64Nullable (x:Bind to Viewmodel)">
+                <Ventura:InputInt64Nullable Value="{x:Bind Viewmodel.FieldInt64Nullable, Mode=TwoWay}" />
+            </Ventura:FormField>
+            <Ventura:FormField FieldWidth="250" Header="InputInt64Nullable (value not set)">
+                <Ventura:InputInt64Nullable MaxValue="100" />
+            </Ventura:FormField>
+            <Ventura:NewLine />
+
+            <Ventura:FormField FieldWidth="250" Header="InputSingle (x:Bind to Viewmodel)">
+                <Ventura:InputSingle Value="{x:Bind Viewmodel.FieldSingle, Mode=TwoWay}" />
+            </Ventura:FormField>
+            <Ventura:FormField FieldWidth="250" Header="InputSingle (value not set)">
+                <Ventura:InputSingle MaxValue="100" />
+            </Ventura:FormField>
+            <Ventura:NewLine />
+
+            <Ventura:FormField FieldWidth="250" Header="InputSingleNullable (x:Bind to Viewmodel)">
+                <Ventura:InputSingleNullable Value="{x:Bind Viewmodel.FieldSingleNullable, Mode=TwoWay}" />
+            </Ventura:FormField>
+            <Ventura:FormField FieldWidth="250" Header="InputSingleNullable (value not set)">
+                <Ventura:InputSingleNullable MaxValue="100" />
+            </Ventura:FormField>
+            <Ventura:NewLine />
+
+            <Ventura:FormField FieldWidth="250" Header="InputDouble (x:Bind to Viewmodel)">
+                <Ventura:InputDouble Value="{x:Bind Viewmodel.FieldDouble, Mode=TwoWay}" />
+            </Ventura:FormField>
+            <Ventura:FormField FieldWidth="250" Header="InputDouble (value not set)">
+                <Ventura:InputDouble MaxValue="100" />
+            </Ventura:FormField>
+            <Ventura:NewLine />
+
+            <Ventura:FormField FieldWidth="250" Header="InputDoubleNullable (x:Bind to Viewmodel)">
+                <Ventura:InputDoubleNullable Value="{x:Bind Viewmodel.FieldDoubleNullable, Mode=TwoWay}" />
+            </Ventura:FormField>
+            <Ventura:FormField FieldWidth="250" Header="InputDoubleNullable (value not set)">
+                <Ventura:InputDoubleNullable MaxValue="100" />
+            </Ventura:FormField>
+            <Ventura:NewLine />
+
+
+        </Ventura:Form>
+
+    </Ventura:SmartPagePanel>
+</Ventura:SmartPage>

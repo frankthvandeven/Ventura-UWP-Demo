@@ -1,0 +1,78 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls">
+
+    <Style TargetType="Ventura:FormField">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Ventura:FormField">
+                    <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Margin="1.8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock
+                                x:Name="textblockHeader"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                FontSize="12"
+                                Foreground="{ThemeResource VenturaAccentBrush}"
+                                Text="{TemplateBinding Header}" />
+
+                            <Ventura:SmartScaler
+                                x:Name="smartscaler"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                SmartScaleFactor="{TemplateBinding SmartScaleFactor}" />
+
+                            <TextBlock
+                                x:Name="BottomRemark"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                FontSize="10"
+                                FontWeight="Bold"
+                                Foreground="Red"
+                                TextWrapping="Wrap"
+                                Visibility="Collapsed" />
+
+                            <TextBlock
+                                x:Name="RightRemark"
+                                Grid.Row="0"
+                                Grid.RowSpan="3"
+                                Grid.Column="1"
+                                Width="{TemplateBinding RemarkWidth}"
+                                FontSize="10"
+                                FontWeight="Bold"
+                                Foreground="Red"
+                                TextWrapping="Wrap"
+                                Visibility="Collapsed" />
+
+                        </Grid>
+                        <Ventura:FormButtonBar
+                            x:Name="FormButtonBar"
+                            Grid.Column="1"
+                            VerticalAlignment="Center" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

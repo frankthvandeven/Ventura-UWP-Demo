@@ -1,0 +1,41 @@
+﻿<Ventura:SmartPage
+    x:Class="Demo.Pages.OrderStatusListPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:venturaautocreate="using:Demo.VenturaAutoCreate"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <controls:DockPanel>
+
+            <Ventura:HyperGrid 
+                x:Name="OrderStatusGrid"
+                RowDoubleClick="OrderStatusGrid_RowDoubleClick" >
+                <Ventura:HyperGrid.Header>
+                    <Ventura:HeaderDefinition Caption="Status" />
+                    <Ventura:HeaderDefinition Caption="Name" />
+                </Ventura:HyperGrid.Header>
+                <Ventura:HyperGrid.ItemTemplate>
+                    <DataTemplate x:DataType="venturaautocreate:GetAll_OrderStatus_Record">
+                        <Ventura:HyperGridPanel>
+                            <!--<Ventura:HyperGridPanel.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="33" />
+                            </Style>
+                        </Ventura:HyperGridPanel.Resources>-->
+                            <TextBlock Width="100" Text="{x:Bind Status}" />
+                            <TextBlock Width="300" Text="{x:Bind Name}" />
+                        </Ventura:HyperGridPanel>
+                    </DataTemplate>
+                </Ventura:HyperGrid.ItemTemplate>
+
+            </Ventura:HyperGrid>
+        </controls:DockPanel>
+
+    </Grid>
+</Ventura:SmartPage>

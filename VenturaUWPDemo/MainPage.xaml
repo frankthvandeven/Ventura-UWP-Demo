@@ -1,0 +1,81 @@
+﻿<Page
+    x:Class="Demo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Demo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:shell="using:Ventura.Shell"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded"
+    mc:Ignorable="d">
+    <!--  ApplicationPageBackgroundThemeBrush  SystemControlAcrylicWindowBrush  -->
+    <Ventura:ShellFrame SettingsButtonClick="SettingsButton_Click">
+        <Ventura:ShellFrame.MenuBar>
+            <Ventura:MenubarItem Caption="Van Arsdel">
+                <Ventura:MenubarCategory Caption="Debug">
+                    <Ventura:MenuItem Caption="Start Page" Click="one_click" />
+                    <Ventura:MenuItem Caption="Customers" Click="Customers_Click" />
+                    <Ventura:MenuItem Caption="Products" Click="Products_Click" />
+                    <Ventura:MenuItem Caption="Orders" Click="Orders_Click" />
+                    <Ventura:MenuItem Caption="Order Status" Click="OrderStatus_Click" />
+                </Ventura:MenubarCategory>
+            </Ventura:MenubarItem>
+            <Ventura:MenubarItem Caption="Demo">
+                <Ventura:MenubarCategory Caption="Controls">
+                    <Ventura:MenuItem Caption="InputControls" Click="InputControls_Click" />
+                    <Ventura:MenuItem Caption="Buttons" Click="Buttons_Click" />
+                    <Ventura:MenuItem Caption="Local menus" Click="LocalMenus_Click" />
+                    <Ventura:MenuItem Caption="Instant screen update" Click="InstantScreenUpdate_Click" />
+                </Ventura:MenubarCategory>
+                <Ventura:MenubarCategory Caption="Text">
+                    <Ventura:MenuItem Caption="Headers" Click="Headers_Click" />
+                    <Ventura:MenuItem Caption="Distinct colors" Click="DistinctColors_Click" />
+                </Ventura:MenubarCategory>
+            </Ventura:MenubarItem>
+            <Ventura:MenubarItem Caption="Apotheek">
+                <Ventura:MenubarCategory Caption="Patiënten">
+                    <Ventura:MenuItem Caption="MenuItem 1" />
+                    <Ventura:MenuItem Caption="MenuItem 2" />
+                    <Ventura:MenuItem Caption="MenuItem 3" />
+                    <Ventura:MenuItem Caption="MenuItem 4" />
+                    <Ventura:MenuItem Caption="MenuItem 5" />
+                    <Ventura:MenuItem Caption="MenuItem 6" />
+                </Ventura:MenubarCategory>
+                <Ventura:MenubarCategory Caption="Receptuur/Kassa">
+                    <Ventura:MenuItem Caption="MenuItem 1" />
+                    <Ventura:MenuItem Caption="MenuItem 2" />
+                </Ventura:MenubarCategory>
+                <Ventura:MenubarCategory Caption="Facturering">
+                    <Ventura:MenuItem Caption="MenuItem 1" />
+                    <Ventura:MenuItem Caption="MenuItem 2" />
+                    <Ventura:MenuItem Caption="MenuItem 3" />
+                </Ventura:MenubarCategory>
+                <Ventura:MenubarCategory Caption="Voorraad">
+                    <Ventura:MenuItem Caption="MenuItem 1" />
+                    <Ventura:MenuItem Caption="MenuItem 2" />
+                </Ventura:MenubarCategory>
+                <Ventura:MenubarCategory Caption="Distributie/Herhaal">
+                    <Ventura:MenuItem Caption="MenuItem 1" />
+                    <Ventura:MenuItem Caption="MenuItem 2" />
+                </Ventura:MenubarCategory>
+                <Ventura:MenubarCategory Caption="Agenda/Taken">
+                    <Ventura:MenuItem Caption="MenuItem 1" />
+                    <Ventura:MenuItem Caption="MenuItem 2" />
+                </Ventura:MenubarCategory>
+                <Ventura:MenubarCategory Caption="Rapportage">
+                    <Ventura:MenuItem Caption="MenuItem 1" />
+                    <Ventura:MenuItem Caption="MenuItem 2" />
+                    <Ventura:MenuItem Caption="MenuItem 3" />
+                    <Ventura:MenuItem Caption="MenuItem 4" />
+                </Ventura:MenubarCategory>
+                <Ventura:MenubarCategory Caption="Stamgegevens">
+                    <Ventura:MenuItem Caption="MenuItem 1" />
+                    <Ventura:MenuItem Caption="MenuItem 2" />
+                </Ventura:MenubarCategory>
+            </Ventura:MenubarItem>
+        </Ventura:ShellFrame.MenuBar>
+    </Ventura:ShellFrame>
+
+</Page>

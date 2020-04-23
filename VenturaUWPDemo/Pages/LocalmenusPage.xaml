@@ -1,0 +1,97 @@
+﻿<Ventura:SmartPage
+    x:Class="Demo.LocalmenusPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Ventura:SmartPage.MenuBar>
+        <Ventura:MenubarItem Caption="STARTPAGELOCAL1">
+            <Ventura:MenubarCategory Caption="Local 1 category 1">
+                <Ventura:MenuItem Caption="MenuItem 1" />
+                <Ventura:MenuItem Caption="MenuItem 2" />
+            </Ventura:MenubarCategory>
+            <Ventura:MenubarCategory Caption="Local 1 category 2">
+                <Ventura:MenuItem Caption="MenuItem 1" />
+                <Ventura:MenuItem Caption="MenuItem 2" />
+            </Ventura:MenubarCategory>
+        </Ventura:MenubarItem>
+        <Ventura:MenubarItem Caption="STARTPAGELOCAL2">
+            <Ventura:MenubarCategory Caption="Local 2 category 1">
+                <Ventura:MenuItem Caption="MenuItem 1" />
+                <Ventura:MenuItem Caption="MenuItem 2" />
+            </Ventura:MenubarCategory>
+            <Ventura:MenubarCategory Caption="Local 2 Category 2">
+                <Ventura:MenuItem Caption="MenuItem 1" />
+                <Ventura:MenuItem Caption="MenuItem 2" />
+            </Ventura:MenubarCategory>
+        </Ventura:MenubarItem>
+        <Ventura:MenubarItem Caption="STARTPAGELOCAL3">
+            <Ventura:MenubarCategory Caption="Local 3 category 1">
+                <Ventura:MenuItem Caption="MenuItem 1" />
+                <Ventura:MenuItem Caption="MenuItem 2" />
+            </Ventura:MenubarCategory>
+            <Ventura:MenubarCategory Caption="Local 2 Category 2">
+                <Ventura:MenuItem Caption="MenuItem 1" />
+                <Ventura:MenuItem Caption="MenuItem 2" />
+            </Ventura:MenubarCategory>
+        </Ventura:MenubarItem>
+        <Ventura:MenubarItem Caption="STARTPAGELOCAL4">
+            <Ventura:MenubarCategory Caption="Local 3 category 1">
+                <Ventura:MenuItem Caption="MenuItem 1" />
+                <Ventura:MenuItem Caption="MenuItem 2" />
+            </Ventura:MenubarCategory>
+            <Ventura:MenubarCategory Caption="Local 2 Category 2">
+                <Ventura:MenuItem Caption="MenuItem 1" />
+                <Ventura:MenuItem Caption="MenuItem 2" />
+            </Ventura:MenubarCategory>
+            <Ventura:MenubarCategory Caption="Local 2 Category 2">
+                <Ventura:MenuItem Caption="MenuItem 1" />
+                <Ventura:MenuItem Caption="MenuItem 2" />
+            </Ventura:MenubarCategory>
+            <Ventura:MenubarCategory Caption="Local 2 Category 2">
+                <Ventura:MenuItem Caption="MenuItem 1" />
+                <Ventura:MenuItem Caption="MenuItem 2" />
+            </Ventura:MenubarCategory>
+            <Ventura:MenubarCategory Caption="Local 2 Category 2">
+                <Ventura:MenuItem Caption="MenuItem 1" />
+                <Ventura:MenuItem Caption="MenuItem 2" />
+            </Ventura:MenubarCategory>
+        </Ventura:MenubarItem>
+        <Ventura:MenubarItem Caption="STARTPAGELOCAL5">
+            <Ventura:MenubarCategory Caption="Local 2 Category 2">
+                <Ventura:MenuItem Caption="MenuItem 1" />
+                <Ventura:MenuItem Caption="MenuItem 2" />
+            </Ventura:MenubarCategory>
+        </Ventura:MenubarItem>
+        <Ventura:MenubarItem Caption="STARTPAGELOCAL6">
+            <Ventura:MenubarCategory Caption="Local 2 Category 2">
+                <Ventura:MenuItem Caption="MenuItem 1" />
+                <Ventura:MenuItem Caption="MenuItem 2" />
+            </Ventura:MenubarCategory>
+        </Ventura:MenubarItem>
+    </Ventura:SmartPage.MenuBar>
+
+    <Ventura:SmartPagePanel>
+
+        <TextBlock Style="{StaticResource BaseTextBlockStyle}">Local menus</TextBlock>
+
+        <TextBlock TextWrapping="Wrap">
+            When this page is activated, local menus will be added to the navigation bar above.
+        </TextBlock>
+
+        <TextBlock>When this page is activated, the rectangle below will be filled blue.</TextBlock>
+
+        <Rectangle
+            x:Name="rectangle"
+            Width="100"
+            Height="100"
+            HorizontalAlignment="Left"
+            Stroke="Gray"
+            StrokeThickness="1.5" />
+
+    </Ventura:SmartPagePanel>
+
+
+</Ventura:SmartPage>

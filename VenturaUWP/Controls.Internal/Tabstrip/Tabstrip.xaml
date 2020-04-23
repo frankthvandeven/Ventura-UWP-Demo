@@ -1,0 +1,317 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls">
+
+    <Style TargetType="Ventura:Tabstrip">
+        <Setter Property="Height" Value="52" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="TabNavigation" Value="Once" />
+        <Setter Property="IsSwipeEnabled" Value="True" />
+        <Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}" />
+        <Setter Property="ShowsScrollingPlaceholders" Value="False" />
+        <Setter Property="ItemContainerTransitions">
+            <Setter.Value>
+                <TransitionCollection />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <!--  Note: We have to use StackPanel here due to other issues using ItemsStackPanel or VirtualizingStackPanel  -->
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Ventura:Tabstrip">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <RepeatButton
+                            x:Name="ScrollBackButton"
+                            Grid.Column="0"
+                            Height="35"
+                            VerticalAlignment="Bottom"
+                            Background="Transparent"
+                            BorderThickness="1"
+                            Delay="50"
+                            FontFamily="Segoe MDL2 Assets"
+                            Interval="80"
+                            Style="{StaticResource RepeatButtonRevealStyle}"
+                            Visibility="Collapsed">
+                            &#xE76B;
+                        </RepeatButton>
+                        <ScrollViewer
+                            x:Name="ScrollViewer"
+                            Grid.Column="1"
+                            AutomationProperties.AccessibilityView="Raw"
+                            BringIntoViewOnFocusChange="True"
+                            HorizontalScrollBarVisibility="Hidden"
+                            HorizontalScrollMode="Auto"
+                            IsDeferredScrollingEnabled="False"
+                            IsHorizontalRailEnabled="True"
+                            IsHorizontalScrollChainingEnabled="True"
+                            IsVerticalRailEnabled="False"
+                            IsVerticalScrollChainingEnabled="True"
+                            TabNavigation="Once"
+                            VerticalScrollBarVisibility="Disabled"
+                            VerticalScrollMode="Auto"
+                            ZoomMode="Disabled">
+                            <ItemsPresenter
+                                Padding="{TemplateBinding Padding}"
+                                Footer="{TemplateBinding Footer}"
+                                FooterTemplate="{TemplateBinding FooterTemplate}"
+                                FooterTransitions="{TemplateBinding FooterTransitions}"
+                                Header="{TemplateBinding Header}"
+                                HeaderTemplate="{TemplateBinding HeaderTemplate}"
+                                HeaderTransitions="{TemplateBinding HeaderTransitions}" />
+                        </ScrollViewer>
+                        <RepeatButton
+                            x:Name="ScrollForwardButton"
+                            Grid.Column="2"
+                            Height="35"
+                            VerticalAlignment="Bottom"
+                            Background="Transparent"
+                            BorderThickness="1"
+                            Delay="50"
+                            FontFamily="Segoe MDL2 Assets"
+                            Interval="80"
+                            Style="{StaticResource RepeatButtonRevealStyle}"
+                            Visibility="Collapsed">
+                            &#xE76C;
+                        </RepeatButton>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Ventura:TabstripItem">
+        <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}" />
+        <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}" />
+        <Setter Property="TabNavigation" Value="Local" />
+        <Setter Property="IsHoldingEnabled" Value="True" />
+        <Setter Property="Padding" Value="12,0,12,0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="MinWidth" Value="{ThemeResource ListViewItemMinWidth}" />
+        <Setter Property="MinHeight" Value="{ThemeResource ListViewItemMinHeight}" />
+        <Setter Property="AllowDrop" Value="False" />
+        <Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}" />
+        <Setter Property="FocusVisualMargin" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Ventura:TabstripItem">
+                    <Grid
+                        x:Name="ContentBorder"
+                        VerticalAlignment="Bottom"
+                        Control.IsTemplateFocusTarget="True"
+                        FocusVisualMargin="{TemplateBinding FocusVisualMargin}"
+                        RenderTransformOrigin="0.5,0.5">
+                        <Grid.RenderTransform>
+                            <ScaleTransform x:Name="ContentBorderScale" />
+                        </Grid.RenderTransform>
+
+                        <ContentPresenter x:Name="ContentPresenter" Visibility="Collapsed" />
+
+                        <!--  Begin: Frank's addition to the ListViewItem(Expanded) template  -->
+                        <Grid x:Name="MainGrid">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10" />
+                                <RowDefinition Height="42" />
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <Rectangle
+                                    x:Name="RectangleLeft"
+                                    Grid.Column="0"
+                                    Height="2"
+                                    Margin="3,0,3,0" />
+                                <Path
+                                    x:Name="AntennaSymbol"
+                                    Grid.Column="1"
+                                    Width="10"
+                                    Height="10"
+                                    Data="M30.333,29.925c-10.555,10.577-10.559,28.546,0.078,39.102l8.43-7.525c-6.929-6.472-7.079-17.038-0.544-23.594  c6.302-6.283,17.093-6.283,23.398,0.003c6.532,6.552,6.382,17.118-0.547,23.59l8.43,7.525C80.217,58.471,80.213,40.5,69.659,29.946  C59.17,19.436,40.843,19.436,30.333,29.925z M55.639,50.537c0-7.8-11.287-7.8-11.287,0V100h11.287V50.537z M15.039,14.24  C-4.829,34.168-4.506,66.863,16.265,85.733l7.855-8.081C7.734,62.964,7.317,37.93,23.018,22.229  c15.009-14.893,38.946-14.893,53.98,0.025c15.676,15.676,15.259,40.71-1.126,55.398l7.855,8.081  c20.744-18.869,21.133-51.565,1.252-71.467C65.797-4.751,34.195-4.751,15.039,14.24z"
+                                    Fill="Black"
+                                    Stretch="Fill" />
+                                <Path
+                                    x:Name="LinkSymbol"
+                                    Grid.Column="1"
+                                    Width="10"
+                                    Height="10"
+                                    Margin="0,0,3,0"
+                                    VerticalAlignment="Center"
+                                    Data="M16.9,10.9C16.7,11.1,16,11.8,16,13c0,0.7,0.4,1.8,0.8,2.8c0.7,0.9,1.2,2,1.2,3.2c0,2-1.1,3.2-1.4,3.5l-3,3  C13.2,25.9,12,27,10,27c-2.8,0-5-2.2-5-5c0-2,1.1-3.2,1.4-3.5l2.1-2.1C8.2,15.3,8,14.2,8,13c0-0.5,0.1-1.1,0.1-1.6  c-0.7,0.5-1.3,1-1.5,1.2l-3,3C3,16.2,1,18.4,1,22c0,5,4,9,9,9c3.6,0,5.8-2,6.4-2.6l3-3C20,24.8,22,22.6,22,19  C22,15.4,19.9,12.3,16.9,10.9z M22,1c-3.6,0-5.8,2-6.4,2.6l-3,3C12,7.2,10,9.4,10,13c0,3.6,2.1,6.7,5.1,8.1c0.2-0.2,0.9-0.9,0.9-2.1  c0-0.7-0.4-1.8-0.8-2.8c-0.7-0.9-1.2-2-1.2-3.2c0-2,1.1-3.2,1.4-3.5l3-3C18.8,6.1,20,5,22,5c2.8,0,5,2.2,5,5c0,2-1.1,3.2-1.4,3.5  l-2.1,2.1c0.3,1.1,0.6,2.2,0.6,3.4c0,0.5-0.1,1.1-0.1,1.6c0.7-0.5,1.3-1,1.5-1.2l3-3C29,15.8,31,13.6,31,10C31,5,27,1,22,1z"
+                                    Fill="Black"
+                                    Stretch="Fill" />
+                                <Rectangle
+                                    x:Name="RectangleRight"
+                                    Grid.Column="2"
+                                    Height="2"
+                                    Margin="3,0,3,0" />
+                            </Grid>
+
+                            <Path
+                                x:Name="Trapezium"
+                                Grid.Row="1"
+                                VerticalAlignment="Bottom"
+                                Data="M4,0 L56,0 60,30 0,30 z"
+                                Stretch="Fill"
+                                Stroke="{StaticResource SystemControlBackgroundTransparentRevealBorderBrush}"
+                                StrokeThickness="1" />
+
+                            <TextBlock
+                                x:Name="TextBlockCaption"
+                                Grid.Row="1"
+                                Padding="12,0,12,5"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                FontSize="13" />
+                        </Grid>
+                        <!--  End: Frank's addition to the ListViewItem(Expanded) template  -->
+
+                        <!--
+                            Any ContentPresenter in this template acts weird. It always expects a Template
+                            And if there is no template, then it will display the DataContext.ToString() in a TextBox.
+                            The Content that was hardcoded in the XAML will be ignored.
+                        -->
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+
+                                    <Storyboard>
+                                        <PointerUpThemeAnimation Storyboard.TargetName="MainGrid" />
+                                    </Storyboard>
+                                </VisualState>
+
+                                <VisualState x:Name="PointerOver">
+
+                                    <Storyboard>
+
+                                        <!--  TEST  -->
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Trapezium" Storyboard.TargetProperty="Opacity">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0.7" />
+                                        </ObjectAnimationUsingKeyFrames>
+
+                                        <!--<DoubleAnimation
+                                            Storyboard.TargetName="BorderBackground"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="1"
+                                            Duration="0" />-->
+                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderBackground" Storyboard.TargetProperty="Fill">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightListLowBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>-->
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <PointerUpThemeAnimation Storyboard.TargetName="MainGrid" />
+                                    </Storyboard>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+
+                                    <Storyboard>
+                                        <!--<DoubleAnimation
+                                            Storyboard.TargetName="BorderBackground"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="1"
+                                            Duration="0" />-->
+                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderBackground" Storyboard.TargetProperty="Fill">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightListMediumBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>-->
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <PointerDownThemeAnimation TargetName="MainGrid" />
+                                    </Storyboard>
+                                </VisualState>
+
+                                <VisualState x:Name="Selected">
+
+                                    <Storyboard>
+
+                                        <!--<DoubleAnimation
+                                            Storyboard.TargetName="BorderBackground"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="1"
+                                            Duration="0" />-->
+                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderBackground" Storyboard.TargetProperty="Fill">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightListAccentLowBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>-->
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <PointerUpThemeAnimation Storyboard.TargetName="MainGrid" />
+                                    </Storyboard>
+                                </VisualState>
+
+                                <VisualState x:Name="PointerOverSelected">
+
+                                    <Storyboard>
+                                        <!--  TEST  -->
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Trapezium" Storyboard.TargetProperty="Opacity">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0.7" />
+                                        </ObjectAnimationUsingKeyFrames>
+
+
+                                        <!--<DoubleAnimation
+                                            Storyboard.TargetName="BorderBackground"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="1"
+                                            Duration="0" />-->
+                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderBackground" Storyboard.TargetProperty="Fill">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightListAccentMediumBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>-->
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <PointerUpThemeAnimation Storyboard.TargetName="MainGrid" />
+                                    </Storyboard>
+                                </VisualState>
+
+                                <VisualState x:Name="PressedSelected">
+
+                                    <Storyboard>
+                                        <!--<DoubleAnimation
+                                            Storyboard.TargetName="BorderBackground"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="1"
+                                            Duration="0" />-->
+                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderBackground" Storyboard.TargetProperty="Fill">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightListAccentHighBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>-->
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <PointerDownThemeAnimation TargetName="MainGrid" />
+                                    </Storyboard>
+                                </VisualState>
+
+                            </VisualStateGroup>
+
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary>

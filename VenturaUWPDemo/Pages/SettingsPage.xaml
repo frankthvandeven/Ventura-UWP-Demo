@@ -1,0 +1,20 @@
+﻿<Ventura:SmartPage
+    x:Class="Demo.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Ventura:SmartPagePanel>
+        <TextBlock Text="Settings" Style="{StaticResource TitleTextBlockStyle}"/>
+
+        <Button Click="Restore_Click">Restore Database</Button>
+        <TextBlock TextWrapping="Wrap">
+            Restore the "Van Arsdel" SQLite database to its original state.
+        </TextBlock>
+        
+    </Ventura:SmartPagePanel>
+
+</Ventura:SmartPage>

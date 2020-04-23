@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Do not edit this document manually, or at least make a backup before doing so.-->
+<project writerversion="2.8.16.0">
+  <inputdatabase providerinvariantname="Microsoft.Data.Sqlite" connectstring="Data Source={pf}\VenturaUWPDemo\VanArsdel.db" />
+  <providersettings includeservername="no" includecatalogname="no" includeschemaname="yes" columnserver="" columncatalog="" columnschema="" columntable="" columntype="" />
+  <outputproject1 enabled="yes" targetplatform="NETStandard" generatedirectadoconnectioncode="yes">.\VenturaUWPDemo\VenturaUWPDemo.csproj</outputproject1>
+  <outputproject2 enabled="no" targetplatform="NETStandard" generatedirectadoconnectioncode="yes" />
+  <outputproject3 enabled="no" targetplatform="NETStandard" generatedirectadoconnectioncode="yes" />
+  <outputproject4 enabled="no" targetplatform="NETStandard" generatedirectadoconnectioncode="yes" />
+  <outputproject5 enabled="no" targetplatform="NETStandard" generatedirectadoconnectioncode="yes" />
+  <outputproject6 enabled="no" targetplatform="NETStandard" generatedirectadoconnectioncode="yes" />
+  <autocreate enabled="yes" folder="VenturaAutoCreate" getall="yes" />
+  <folderstructure>
+    <folder selected="no" expanded="yes" />
+    <folder selected="no" expanded="yes">VenturaRecordsets</folder>
+    <folder selected="no" expanded="yes">VenturaAutoCreate</folder>
+  </folderstructure>
+  <projectitems>
+    <recordsetdefinition classname="MostRecentOrdersRecordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaRecordsets</outputfolder>
+      <classsummary />
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>select Orders.CustomerID, Customers.FirstName, Customers.LastName, OrderID, OrderStatus.Name as OrderStatusName, OrderDate, ShippedDate, DeliveredDate, ShipCity, 
+CountryCodes.Name as ShipCountryName
+
+from  Orders
+join Customers on Customers.CustomerID = Orders.CustomerID
+join OrderStatus on OrderStatus.Status = Orders.Status
+join CountryCodes on CountryCodes.CountryCodeID = Orders.ShipCountryCode
+order by OrderDate desc limit 5000
+   
+   
+</sqlscript>
+      <parameters />
+      <resultsets>
+        <resultset name="Resultset1Recordset" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="Orders" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="GetAll_Categories_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [CategoryID],[Description],[Name],[Picture],[Thumbnail]
+FROM [Categories]</sqlscript>
+      <parameters />
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="Categories" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="GetAll_CountryCodes_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [CountryCodeID],[Name]
+FROM [CountryCodes]</sqlscript>
+      <parameters />
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="CountryCodes" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="GetAll_Customers_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [CustomerID],[AddressLine1],[AddressLine2],[BirthDate],[ChildrenAtHome],[City],[CountryCode],[CreatedOn],[Education],[EmailAddress],[FirstName],[Gender],
+[IsHouseOwner],[LastModifiedOn],[LastName],[MaritalStatus],[MiddleName],[NumberCarsOwned],[Occupation],[Phone],[Picture],[PostalCode],[Region],[SearchTerms],
+[Suffix],[Thumbnail],[Title],[TotalChildren],[YearlyIncome]
+FROM [Customers]</sqlscript>
+      <parameters />
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="Customers" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="GetAll_DbVersion_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [Version]
+FROM [DbVersion]</sqlscript>
+      <parameters />
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="DbVersion" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="GetAll_OrderItems_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [OrderID],[OrderLine],[Discount],[ProductID],[Quantity],[TaxType],[UnitPrice]
+FROM [OrderItems]</sqlscript>
+      <parameters />
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="OrderItems" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="GetAll_Orders_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [OrderID],[CustomerID],[DeliveredDate],[LastModifiedOn],[OrderDate],[PaymentType],[SearchTerms],[ShipAddress],[ShipCity],[ShipCountryCode],[ShipPhone],
+[ShipPostalCode],[ShipRegion],[ShipVia],[ShippedDate],[Status],[TrackingNumber]
+FROM [Orders]</sqlscript>
+      <parameters />
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="Orders" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="GetAll_OrderStatus_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [Status],[Name]
+FROM [OrderStatus]</sqlscript>
+      <parameters />
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="OrderStatus" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="GetAll_PaymentTypes_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [PaymentTypeID],[Name]
+FROM [PaymentTypes]</sqlscript>
+      <parameters />
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="PaymentTypes" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="GetAll_Products_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [ProductID],[CategoryID],[Color],[CreatedOn],[DealerPrice],[Description],[Discount],[DiscountEndDate],[DiscountStartDate],[LastModifiedOn],[ListPrice],
+[Name],[Picture],[SafetyStockLevel],[SearchTerms],[Size],[StockUnits],[TaxType],[Thumbnail]
+FROM [Products]</sqlscript>
+      <parameters />
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="Products" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="GetAll_Shippers_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [ShipperID],[Name],[Phone]
+FROM [Shippers]</sqlscript>
+      <parameters />
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="Shippers" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="GetAll_TaxTypes_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [TaxTypeID],[Name],[Rate]
+FROM [TaxTypes]</sqlscript>
+      <parameters />
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="TaxTypes" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="PriKey_Categories_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [CategoryID],[Description],[Name],[Picture],[Thumbnail]
+FROM [Categories]
+WHERE [CategoryID] = @CategoryID</sqlscript>
+      <parameters>
+        <parameter name="@CategoryID" fulltypename="System.Int64" input="yes" output="no" designvalue="null" setdbtype="no" setlength="no" setprecision="no" setscale="no" dbtypestring="DbType.Int64" length="0" precision="0" scale="0" />
+      </parameters>
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="Categories" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="PriKey_CountryCodes_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [CountryCodeID],[Name]
+FROM [CountryCodes]
+WHERE [CountryCodeID] = @CountryCodeID</sqlscript>
+      <parameters>
+        <parameter name="@CountryCodeID" fulltypename="System.String" input="yes" output="no" designvalue="null" setdbtype="no" setlength="no" setprecision="no" setscale="no" dbtypestring="DbType.String" length="0" precision="0" scale="0" />
+      </parameters>
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="CountryCodes" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="PriKey_Customers_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [CustomerID],[AddressLine1],[AddressLine2],[BirthDate],[ChildrenAtHome],[City],[CountryCode],[CreatedOn],[Education],[EmailAddress],[FirstName],[Gender],
+[IsHouseOwner],[LastModifiedOn],[LastName],[MaritalStatus],[MiddleName],[NumberCarsOwned],[Occupation],[Phone],[Picture],[PostalCode],[Region],[SearchTerms],
+[Suffix],[Thumbnail],[Title],[TotalChildren],[YearlyIncome]
+FROM [Customers]
+WHERE [CustomerID] = @CustomerID</sqlscript>
+      <parameters>
+        <parameter name="@CustomerID" fulltypename="System.Int64" input="yes" output="no" designvalue="null" setdbtype="no" setlength="no" setprecision="no" setscale="no" dbtypestring="DbType.Int64" length="0" precision="0" scale="0" />
+      </parameters>
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="Customers" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="PriKey_DbVersion_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [Version]
+FROM [DbVersion]
+WHERE [Version] = @Version</sqlscript>
+      <parameters>
+        <parameter name="@Version" fulltypename="System.String" input="yes" output="no" designvalue="null" setdbtype="no" setlength="no" setprecision="no" setscale="no" dbtypestring="DbType.String" length="0" precision="0" scale="0" />
+      </parameters>
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="DbVersion" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="PriKey_OrderItems_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [OrderID],[OrderLine],[Discount],[ProductID],[Quantity],[TaxType],[UnitPrice]
+FROM [OrderItems]
+WHERE [OrderID] = @OrderID
+AND [OrderLine] = @OrderLine</sqlscript>
+      <parameters>
+        <parameter name="@OrderID" fulltypename="System.Int64" input="yes" output="no" designvalue="null" setdbtype="no" setlength="no" setprecision="no" setscale="no" dbtypestring="DbType.Int64" length="0" precision="0" scale="0" />
+        <parameter name="@OrderLine" fulltypename="System.Int64" input="yes" output="no" designvalue="null" setdbtype="no" setlength="no" setprecision="no" setscale="no" dbtypestring="DbType.Int64" length="0" precision="0" scale="0" />
+      </parameters>
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="OrderItems" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="PriKey_Orders_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [OrderID],[CustomerID],[DeliveredDate],[LastModifiedOn],[OrderDate],[PaymentType],[SearchTerms],[ShipAddress],[ShipCity],[ShipCountryCode],[ShipPhone],
+[ShipPostalCode],[ShipRegion],[ShipVia],[ShippedDate],[Status],[TrackingNumber]
+FROM [Orders]
+WHERE [OrderID] = @OrderID</sqlscript>
+      <parameters>
+        <parameter name="@OrderID" fulltypename="System.Int64" input="yes" output="no" designvalue="null" setdbtype="no" setlength="no" setprecision="no" setscale="no" dbtypestring="DbType.Int64" length="0" precision="0" scale="0" />
+      </parameters>
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="Orders" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="PriKey_OrderStatus_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [Status],[Name]
+FROM [OrderStatus]
+WHERE [Status] = @Status</sqlscript>
+      <parameters>
+        <parameter name="@Status" fulltypename="System.Int64" input="yes" output="no" designvalue="null" setdbtype="no" setlength="no" setprecision="no" setscale="no" dbtypestring="DbType.Int64" length="0" precision="0" scale="0" />
+      </parameters>
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="OrderStatus" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="PriKey_PaymentTypes_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [PaymentTypeID],[Name]
+FROM [PaymentTypes]
+WHERE [PaymentTypeID] = @PaymentTypeID</sqlscript>
+      <parameters>
+        <parameter name="@PaymentTypeID" fulltypename="System.Int64" input="yes" output="no" designvalue="null" setdbtype="no" setlength="no" setprecision="no" setscale="no" dbtypestring="DbType.Int64" length="0" precision="0" scale="0" />
+      </parameters>
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="PaymentTypes" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="PriKey_Products_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [ProductID],[CategoryID],[Color],[CreatedOn],[DealerPrice],[Description],[Discount],[DiscountEndDate],[DiscountStartDate],[LastModifiedOn],[ListPrice],
+[Name],[Picture],[SafetyStockLevel],[SearchTerms],[Size],[StockUnits],[TaxType],[Thumbnail]
+FROM [Products]
+WHERE [ProductID] = @ProductID</sqlscript>
+      <parameters>
+        <parameter name="@ProductID" fulltypename="System.String" input="yes" output="no" designvalue="null" setdbtype="no" setlength="no" setprecision="no" setscale="no" dbtypestring="DbType.String" length="0" precision="0" scale="0" />
+      </parameters>
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="Products" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="PriKey_Shippers_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [ShipperID],[Name],[Phone]
+FROM [Shippers]
+WHERE [ShipperID] = @ShipperID</sqlscript>
+      <parameters>
+        <parameter name="@ShipperID" fulltypename="System.Int64" input="yes" output="no" designvalue="null" setdbtype="no" setlength="no" setprecision="no" setscale="no" dbtypestring="DbType.Int64" length="0" precision="0" scale="0" />
+      </parameters>
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="Shippers" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+    <recordsetdefinition classname="PriKey_TaxTypes_Recordset" enabled="yes" selected="no">
+      <project1>yes</project1>
+      <project2>yes</project2>
+      <project3>yes</project3>
+      <project4>yes</project4>
+      <project5>yes</project5>
+      <project6>yes</project6>
+      <outputfolder>VenturaAutoCreate</outputfolder>
+      <classsummary>Recordset item automatically created by Ventura SQL Studio.</classsummary>
+      <implementdatabinding>yes</implementdatabinding>
+      <sqlscript>SELECT [TaxTypeID],[Name],[Rate]
+FROM [TaxTypes]
+WHERE [TaxTypeID] = @TaxTypeID</sqlscript>
+      <parameters>
+        <parameter name="@TaxTypeID" fulltypename="System.Int64" input="yes" output="no" designvalue="null" setdbtype="no" setlength="no" setprecision="no" setscale="no" dbtypestring="DbType.Int64" length="0" precision="0" scale="0" />
+      </parameters>
+      <resultsets>
+        <resultset name="Resultset1" enabled="yes">
+          <updateabletablename server="" catalog="main" schema="" table="TaxTypes" />
+        </resultset>
+      </resultsets>
+      <userdefinedcolumns />
+    </recordsetdefinition>
+  </projectitems>
+</project>

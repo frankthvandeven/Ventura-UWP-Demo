@@ -1,0 +1,53 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls">
+
+    <!--<ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Default">-->
+
+    <!--<Color x:Key="FelixColor">Red</Color>-->
+    <!--<SolidColorBrush x:Key="aaa" Color="{StaticResource SystemChromeLowColor}" />-->
+    <!--<StaticResource x:Key="bbbbbb" ResourceKey="SystemControlTransparentBrush" />-->
+    <!--</ResourceDictionary>-->
+    <!--</ResourceDictionary.ThemeDictionaries>-->
+
+    <Style TargetType="Ventura:Form">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Ventura:Form">
+                    <Grid
+                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid.Resources>
+                            <!--<Style TargetType="Control" x:Key="baseStyle">
+                                <Setter Property="FontSize" Value="10" />
+                            </Style>
+                            <Style TargetType="Button" BasedOn="{StaticResource baseStyle}"></Style>
+                            <Style TargetType="TextBox" BasedOn="{StaticResource baseStyle}"></Style>
+                            <Style TargetType="ListView" BasedOn="{StaticResource baseStyle}"></Style>-->
+                            <!--  ComboBox, RadioButton, CheckBox, etc...  -->
+                        </Grid.Resources>
+                        <ItemsPresenter />
+                        <Grid x:Name="Canvas" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <Ventura:FormPanel />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,63 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls">
+
+    <Style TargetType="Ventura:InputBase">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Ventura:InputBase">
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="Ventura:MiniButton">
+                                <Setter Property="AllowFocusOnInteraction" Value="False" />
+                                <Setter Property="IsTabStop" Value="False" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                                <Setter Property="Visibility" Value="Collapsed" />
+                                <Setter Property="BorderThickness" Value="0" />
+                                <Setter Property="OuterWidthAndHeight" Value="17" />
+                                <Setter Property="InnerWidthAndHeight" Value="13" />
+                                <Setter Property="Foreground" Value="{StaticResource GridLineBrush}" />
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Ventura:FormTextBox
+                            x:Name="textbox"
+                            Grid.Column="0"
+                            FontSize="13" />
+                        <Ventura:MiniButton
+                            x:Name="EnterButton"
+                            Grid.Column="1" 
+                            Margin="2,0,0,0"
+                            PathData="M46.4977918,98.7172694 L46.5169708,98.7184818 C46.5169708,98.7184818 52.1493584,85.0095403 59.3051751,70.9397105 C63.2356938,63.2114902 68.121901,55.3724183 71.6266306,49.6410967 C75.3825721,43.4989658 79.4155583,36.1271842 84.4989917,29.9838909 C93.2023777,19.4659105 102.241079,11.1269849 102.241079,11.1269849 C106.896373,6.55866687 105.524661,4.00779986 99.1498543,5.36331849 L87.5394152,7.83212548 C87.5394152,7.83212548 82.099908,12.1919407 76.7774407,18.3004753 C71.9167114,23.8790784 66.6779623,31.1289436 63.5521833,35.8882769 C60.4539136,40.6057243 56.5733495,47.1551633 52.9408723,53.7255031 C47.053416,64.374596 41.1042912,76.0512288 36.8032194,84.6946616 C34.0373745,80.6364557 31.1271757,76.5867308 28.8377426,73.9239679 C26.8594575,71.6230907 22.1539437,68.6354114 22.1539437,68.6354114 C22.1539437,68.6354114 18.673405,66.3894315 15.7654963,66.9104128 C13.0141216,67.4033493 10.0260866,70.0397402 9.71236463,70.3221481 L9.59711696,70.233245 C9.59711696,70.233245 6.99030905,72.2566398 6.23142937,74.2564969 C5.47254969,76.256354 6.82298371,78.3420051 6.82298371,78.3420051 C6.82298371,78.3420051 14.1142997,86.2958459 17.3537097,90.4480382 C21.0092031,95.1335556 27.2659547,104.51215 27.2659547,104.51215 C27.2659547,104.51215 38.9728481,105.609813 41.7893066,104.51215 C44.5160606,103.449448 46.3817153,98.9996448 46.4977918,98.7172694 L46.4977918,98.7172694 Z">
+                            <Ventura:MiniButton.Resources>
+                                <SolidColorBrush x:Key="AppBarButtonForegroundPointerOver" Color="Green" />
+                                <SolidColorBrush x:Key="AppBarButtonForegroundPressed" Color="Green" />
+                            </Ventura:MiniButton.Resources>
+                        </Ventura:MiniButton>
+                        <Ventura:MiniButton
+                            x:Name="CancelButton"
+                            Grid.Column="2"
+                            PathData="M58.3,31.69a24.75,24.75,0,0,0,3.1-5q6-7.94,11.77-15.8A6.47,6.47,0,0,0,73.84,4a7.67,7.67,0,0,0-6.75-4,7.25,7.25,0,0,0-5.9,3c-6.13,8.38-12.5,16.85-19,25.23L26.55,3.44a7,7,0,0,0-6-3.35A7.6,7.6,0,0,0,14,3.93a6.66,6.66,0,0,0,.29,6.94L25.06,27.93l7.58,12-2.4,2.66C24.61,48.87,19.6,55.37,13.59,61.32,8.88,66,2.08,71.6.35,78.31c-1.2,4.68.7,9.68,5,11.06,3.47,2.27,8.81,1.33,12.82-1.79,8-6.23,12.64-15.52,17.9-23.94,1.65-2.65,3.45-5.19,5.31-7.7.9,1.88,1.81,3.76,2.75,5.62C48,69.17,52.35,77,58.21,83.23c4.32,4.62,12.12,4.57,14-2.07a6.68,6.68,0,0,0-.62-6.24L51.36,42.79c1.56-2.14,3.07-4.3,4.47-6.54A46.63,46.63,0,0,0,58.3,31.69ZM70.71,8.15a3.82,3.82,0,0,1-.18.34v0C70.59,8.36,70.66,8.25,70.71,8.15ZM67.09,3.5H66.9Zm-48.93.93h0l.33-.23Zm2.39-.83h.06a3.6,3.6,0,0,1,.54,0A3.61,3.61,0,0,0,20.54,3.6Z">
+                            <Ventura:MiniButton.Resources>
+                                <SolidColorBrush x:Key="AppBarButtonForegroundPointerOver" Color="Red" />
+                                <SolidColorBrush x:Key="AppBarButtonForegroundPressed" Color="Red" />
+                            </Ventura:MiniButton.Resources>
+                            <!--<Ventura:MiniButton.KeyboardAccelerators>
+                                <KeyboardAccelerator Key="Escape" Modifiers="None" />
+                            </Ventura:MiniButton.KeyboardAccelerators>-->
+                        </Ventura:MiniButton>
+
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

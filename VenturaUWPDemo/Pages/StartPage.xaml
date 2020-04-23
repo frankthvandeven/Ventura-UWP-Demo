@@ -1,0 +1,52 @@
+﻿<Ventura:SmartPage
+    x:Class="Demo.StartPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Ventura:SmartPagePanel>
+
+        <TextBlock Style="{StaticResource BaseTextBlockStyle}">Start Page</TextBlock>
+
+        <TextBlock TextWrapping="Wrap">
+            This is the showcase application for Ventura UWP. Ventura UWP is a complete system for the rapid
+            development of LOB (Line of Business) software.
+        </TextBlock>
+
+        <TextBlock TextWrapping="Wrap">
+            Ventura is a combination of software development framework, control suite, and a 3-tier SQL framework
+            for C# projects where database access and web services are integrated into a single solution.
+        </TextBlock>
+
+        <TextBlock TextWrapping="Wrap">
+            Ventura is much more than the sum of its parts as all the components are perfectly integrated.
+            High productivity and simplicity for the developer, and a modern and super responsive user-interface
+            for the end-user.
+        </TextBlock>
+
+        <TextBlock TextWrapping="Wrap">
+            With Ventura, a development team with at least average-quality developers
+            is able to rapidly produce professional and consistent results.
+        </TextBlock>
+
+        <TextBlock TextWrapping="Wrap">
+            Ventura is currently a research project.
+        </TextBlock>
+
+        <TextBlock TextWrapping="Wrap">
+            Please visit<Run Text=" " /><Hyperlink NavigateUri="https://venturatools.com">https://venturatools.com</Hyperlink>
+            and sign up for my mailing list to receive product announcements.</TextBlock>
+
+        <TextBlock TextWrapping="Wrap">
+            My email address is<Run Text=" " /><Hyperlink NavigateUri="mailto:fvv@venturatools.com">fvv@venturatools.com</Hyperlink>
+        </TextBlock>
+
+        <TextBlock TextWrapping="Wrap">
+            Thank you for your interest,<LineBreak />
+            Frank Th. van de Ven, the Netherlands.</TextBlock>
+
+    </Ventura:SmartPagePanel>
+</Ventura:SmartPage>

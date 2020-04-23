@@ -1,0 +1,88 @@
+﻿<UserControl
+    x:Class="Ventura.Controls.TabbedFrame"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    AllowDrop="{x:Bind ViewModel.AllowDrop, Mode=OneWay}"
+    DragOver="UserControl_DragOver"
+    Drop="UserControl_Drop"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <Storyboard x:Name="ColorStoryBoard">
+            <ColorAnimation
+                x:Name="ColorAnimation"
+                Storyboard.TargetName="ActiveRectangle"
+                Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)"
+                To="{StaticResource VenturaOrangeColor}"
+                Duration="0:0:0.65" />
+            <!--<ColorAnimation Storyboard.TargetName="Root" Duration="0:0:0.25" Storyboard.TargetProperty="(Panel.Foreground).(SolidColorBrush.Color)" To="White" />-->
+        </Storyboard>
+    </UserControl.Resources>
+
+    <!--  The Grid's Background color needs to be set so it is fully Hittest visible. A null background is not ok.  -->
+    <Grid x:Name="RootGrid" Background="Transparent">
+        <Grid.Resources />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Ventura:Tabstrip
+                x:Name="TabStrip"
+                Margin="0,10,0,0"
+                Padding="10,0,10,0"
+                CanDragItems="True"
+                CanReorderItems="False"
+                DragItemsCompleted="TabStrip_DragItemsCompleted"
+                DragItemsStarting="TabStrip_DragItemsStarting"
+                ItemsSource="{x:Bind ViewModel.Tabs}"
+                SelectedItem="{x:Bind ViewModel.SelectedTab, Mode=TwoWay}" />
+        </Grid>
+
+        <Rectangle
+            x:Name="ActiveRectangle"
+            Grid.Row="1"
+            Height="2.5"
+            Fill="{StaticResource VenturaGrayDark1Brush}" />
+
+        <Ventura:BreadCrumb
+            x:Name="BreadCrumb"
+            Grid.Row="2"
+            PageStack="{x:Bind ViewModel.CurrentPageStack, Mode=OneWay}" />
+
+        <ContentPresenter x:Name="Presenter" Grid.Row="3" />
+
+    </Grid>
+
+</UserControl>
+
+
+
+<!--<VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ActiveStates">-->
+<!--  The Normal state is the state the button is in when it is not in another state from this VisualStateGroup.  -->
+<!--
+                <VisualState x:Name="InActive" />
+                <VisualState x:Name="Active">
+                    <Storyboard>
+                        <ColorAnimation
+                            x:Name="xColorAnimation"
+                            Storyboard.TargetName="ActiveRectangle"
+                            Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)"
+                            To="{StaticResource VenturaOrangeColor}"
+                            Duration="0:0:0.65" />
+                        <ColorAnimation Storyboard.TargetName="Root" Duration="0:0:0.25" Storyboard.TargetProperty="(Panel.Foreground).(SolidColorBrush.Color)" To="White" />
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>-->
+
+<!--<ColorAnimation From="White" To="#52b0ca" Duration="0:0:1" Storyboard.TargetName="Border" Storyboard.TargetProperty="Background.Color"/>-->

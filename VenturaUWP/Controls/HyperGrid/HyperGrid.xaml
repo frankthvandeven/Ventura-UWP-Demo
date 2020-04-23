@@ -1,0 +1,43 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls">
+
+    <Style TargetType="Ventura:HyperGrid">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Ventura:HyperGrid">
+                    <Grid x:Name="MainGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <ScrollViewer
+                            x:Name="HeaderScrollViewer"
+                            Grid.Row="0"
+                            Background="{StaticResource VenturaBlueBrush}"
+                            HorizontalScrollBarVisibility="Hidden"
+                            VerticalScrollBarVisibility="Disabled">
+                            <Ventura:HyperGridHeader x:Name="HeaderControl" HorizontalAlignment="Left" />
+                        </ScrollViewer>
+                        <ListView
+                            x:Name="ListView"
+                            Grid.Row="1"
+                            ItemTemplate="{TemplateBinding ItemTemplate}"
+                            ItemsSource="{TemplateBinding ItemsSource}"
+                            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                            ScrollViewer.HorizontalScrollMode="Auto"
+                            SelectionMode="{TemplateBinding SelectionMode}"
+                            ShowsScrollingPlaceholders="False">
+                            <ListView.Resources>
+                                <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/HyperGrid/ListView.xaml" />
+                            </ListView.Resources>
+                        </ListView>
+                    </Grid>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,59 @@
+<!--  Only use Generic.xaml to style custom controls inside the project.  -->
+
+<!--
+    It is impossible to access resources in generic.xaml from code behind. There is nothing similar to Application.Current.Resources[] available.
+    Default styles for custom controls MUST be defined in generic.xaml, otherwise automatic style inheritance by an application developer will not work.
+    If you want styles to be accessible from code behind, they must be in the AppDictionary.xaml (App.xaml)
+    
+    http://putridparrot.com/blog/accessing-xaml-resources-in-code/
+-->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls.Internal/BreadCrumb/BreadCrumb.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/FormControl/Form.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/FormField/FormField.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/SmartScaler/SmartScaler.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls.Internal/HomeButton/HomeButton.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls.Internal/LeftTopCorner/LeftTopCorner.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/SmartPage/SmartPage.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/SmartPagePanel/SmartPagePanel.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/Input/InputBase.xaml" />
+
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls.Internal/NavigationBarControl/NavigationBarControl.xaml" />
+
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/MenuPanelControl/MenuPanel.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/LeftPanel/LeftPanel.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/HyperGrid/HyperGrid.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls.Internal/Tabstrip/Tabstrip.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/ButtonControls/SmartButton.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/ButtonControls/SmartToggleButton.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/ButtonControls/MiniButton.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/ButtonBar/ButtonBar.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/FormButtonBar/FormButtonBar.xaml" />
+
+        <!--<ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/TextInput/TextInput.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/Dialog/Dialog.xaml" />
+        <ResourceDictionary Source="ms-appx:///VenturaUWP/Controls/VenturaGrid/VenturaGrid.xaml" />-->
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>
+
+
+<!--
+    Here is the list of fonts that are guaranteed to be available in all Windows 10 editions that support UWP apps:
+    public static string[] FontNames = {
+    "Arial", "Calibri", "Cambria", "Cambria Math", "Comic Sans MS", "Courier New",
+    "Ebrima", "Gadugi", "Georgia",
+    "Javanese Text Regular Fallback font for Javanese script", "Leelawadee UI",
+    "Lucida Console", "Malgun Gothic", "Microsoft Himalaya", "Microsoft JhengHei",
+    "Microsoft JhengHei UI", "Microsoft New Tai Lue", "Microsoft PhagsPa",
+    "Microsoft Tai Le", "Microsoft YaHei", "Microsoft YaHei UI",
+    "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text",
+    "Nirmala UI", "Segoe MDL2 Assets", "Segoe Print", "Segoe UI", "Segoe UI Emoji",
+    "Segoe UI Historic", "Segoe UI Symbol", "SimSun", "Times New Roman",
+    "Trebuchet MS", "Verdana", "Webdings", "Wingdings", "Yu Gothic",
+    "Yu Gothic UI"
+    };
+-->

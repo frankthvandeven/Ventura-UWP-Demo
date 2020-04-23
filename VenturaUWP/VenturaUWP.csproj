@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A415FE5-A44B-427A-A0C3-D0520D567D56}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ventura</RootNamespace>
+    <AssemblyName>VenturaUWP</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17134.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
+    <PlatformTarget>ARM64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
+    <PlatformTarget>ARM64</PlatformTarget>
+    <OutputPath>bin\ARM64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <GenerateLibraryLayout>true</GenerateLibraryLayout>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\VenturaUWP.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.10</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls.Internal\BreadCrumb\BreadCrumb.cs" />
+    <Compile Include="Controls.Internal\BreadCrumb\BreadCrumbVisual.cs" />
+    <Compile Include="Controls.Internal\BreadCrumb\SingleCrumb.cs" />
+    <Compile Include="Controls.Internal\LeftTopCorner\LeftTopCorner.cs" />
+    <Compile Include="Controls.Internal\InsideDropShadowPanel\InsideDropShadowPanel.cs" />
+    <Compile Include="Controls.Internal\NavigationBarControl\NavigationBarControl.cs" />
+    <Compile Include="Controls.Internal\NavigationBarControl\NavigationBarItem.cs" />
+    <Compile Include="Controls.Internal\NavigationBarControl\NavigationBarPanel.cs" />
+    <Compile Include="Controls.Internal\Shell\ShellFrame.Titlebar.cs" />
+    <Compile Include="Controls.Internal\Shell\ShellFrame.NavigationBar.cs" />
+    <Compile Include="Controls.Internal\Tabstrip\Tabstrip.cs" />
+    <Compile Include="Controls.Internal\Tabstrip\TabstripItem.cs" />
+    <Compile Include="Controls\ButtonBar\ButtonBar.cs" />
+    <Compile Include="Controls\ButtonControls\ISmartButton.cs" />
+    <Compile Include="Controls\ButtonControls\MiniButton.cs" />
+    <Compile Include="Controls\ButtonControls\SmartToggleButton.cs" />
+    <Compile Include="Controls\ButtonControls\SmartButton.cs" />
+    <Compile Include="Controls\ButtonControls\StandardFormButtons\FormButtonZoom.cs" />
+    <Compile Include="Controls\ButtonControls\Standard\ButtonBack.cs" />
+    <Compile Include="Controls\ButtonControls\Standard\ButtonCancel.cs" />
+    <Compile Include="Controls\ButtonControls\Standard\ButtonCloseTab.cs" />
+    <Compile Include="Controls\ButtonControls\Standard\ButtonSave.cs" />
+    <Compile Include="Controls\ButtonControls\Standard\ButtonSelect.cs" />
+    <Compile Include="Controls\ButtonControls\Standard\ButtonNew.cs" />
+    <Compile Include="Controls\ButtonControls\Standard\ButtonEdit.cs" />
+    <Compile Include="Controls\ButtonControls\Standard\ButtonConfirm.cs" />
+    <Compile Include="Controls\ButtonControls\Standard\ButtonDelete.cs" />
+    <Compile Include="Controls\ButtonControls\Standard\ButtonDeleteX.cs" />
+    <Compile Include="Controls\ButtonControls\Standard\ButtonClose.cs" />
+    <Compile Include="Controls\FormButtonBar\FormButtonBar.cs" />
+    <Compile Include="Controls\FormControl\Form.Properties.cs" />
+    <Compile Include="Controls\FormControl\IFormField.cs" />
+    <Compile Include="Controls\FormField\AutoStyler.cs" />
+    <Compile Include="Controls\FormField\FormField.Events.cs" />
+    <Compile Include="Controls\FormField\FormField.Properties.cs" />
+    <Compile Include="Controls\Input\FormTextBox.cs" />
+    <Compile Include="Controls\HyperGridHeader\HyperGridHeader.xaml.cs">
+      <DependentUpon>HyperGridHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HyperGridHeader\HyperGridHeaderCell.xaml.cs">
+      <DependentUpon>HyperGridHeaderCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HyperGrid\EventArgs\RowClickedEventArgs.cs" />
+    <Compile Include="Controls\HyperGrid\EventArgs\RowDoubleClickedEventArgs.cs" />
+    <Compile Include="Controls\HyperGrid\EventArgs\RowRightClickedEventArgs.cs" />
+    <Compile Include="Controls\HyperGrid\HeaderDefinition.cs" />
+    <Compile Include="Controls\HyperGrid\HyperGrid.cs" />
+    <Compile Include="Controls\HyperGrid\HyperGridPanel.cs" />
+    <Compile Include="Controls\Input\InputBase.cs" />
+    <Compile Include="Controls\Input\InputDecimalNullable.cs" />
+    <Compile Include="Controls\Input\InputDecimal.cs" />
+    <Compile Include="Controls\Input\SimpleNullable\InputByteNullable.cs" />
+    <Compile Include="Controls\Input\SimpleNullable\InputInt16Nullable.cs" />
+    <Compile Include="Controls\Input\SimpleNullable\InputInt32Nullable.cs" />
+    <Compile Include="Controls\Input\SimpleNullable\InputInt64Nullable.cs" />
+    <Compile Include="Controls\Input\InputStringNullable.cs" />
+    <Compile Include="Controls\Input\InputString.cs" />
+    <Compile Include="Controls\Input\SimpleNullable\InputDoubleNullable.cs" />
+    <Compile Include="Controls\Input\SimpleNullable\InputSingleNullable.cs" />
+    <Compile Include="Controls\Input\Simple\InputDouble.cs" />
+    <Compile Include="Controls\Input\Simple\InputByte.cs" />
+    <Compile Include="Controls\Input\Simple\InputInt16.cs" />
+    <Compile Include="Controls\Input\Simple\InputInt32.cs" />
+    <Compile Include="Controls\Input\Simple\InputSingle.cs" />
+    <Compile Include="Controls\Input\Simple\InputInt64.cs" />
+    <Compile Include="Controls\Input\InputDateNullable.cs" />
+    <Compile Include="Controls\Input\InputDate.cs" />
+    <Compile Include="Controls\Input\AutoCompletionTools.cs" />
+    <Compile Include="Controls\SmartPagePanel\SmartPagePanel.cs" />
+    <Compile Include="Controls\SmartPage\SmartPage.Assistant.cs" />
+    <Compile Include="Controls\SmartPage\SmartPage.OpenSatellite.cs" />
+    <Compile Include="Controls\SmartPage\SmartPage.ClosePage.cs" />
+    <Compile Include="Controls\SmartPage\SmartPage.OpenModal.cs" />
+    <Compile Include="Converters\BoolNegationConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\DateTimeFormatConverter.cs" />
+    <Compile Include="Converters\DateTimeOffsetConverter.cs" />
+    <Compile Include="Converters\DecimalConverter.cs" />
+    <Compile Include="Converters\DoubleConverter.cs" />
+    <Compile Include="Converters\Int16Converter.cs" />
+    <Compile Include="Converters\Int32Converter.cs" />
+    <Compile Include="Converters\Int64Converter.cs" />
+    <Compile Include="Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="Converters\ImageConverter.cs" />
+    <Compile Include="Helpers\BitmapTools.cs" />
+    <Compile Include="Helpers\DistinctColors.cs" />
+    <Compile Include="Helpers\GlobalizationHelper.cs" />
+    <Compile Include="Helpers\Sqlite.cs" />
+    <Compile Include="PopupDialogs\ConfirmDeleteDialog.xaml.cs">
+      <DependentUpon>ConfirmDeleteDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialogs\Popup.cs" />
+    <Compile Include="Validation\ValidateEventArgs.cs" />
+    <Compile Include="Validation\ValidatorItem.cs" />
+    <Compile Include="Validation\Validator.cs" />
+    <Compile Include="Controls.Internal\Shell\TabbedFrame.Dragdrop.cs" />
+    <None Include="Controls\SmartGrid\SmartGridColumn.cs" />
+    <Compile Include="Controls\SmartPage\SmartPage.Viewmodel.cs" />
+    <Compile Include="Controls\SmartPage\SmartPage.cs" />
+    <Compile Include="Controls.NonVisual\Menubar\MenubarCategory.cs" />
+    <Compile Include="Controls.NonVisual\Menubar\MenubarItem.cs" />
+    <Compile Include="Controls.NonVisual\Menubar\MenuItem.cs" />
+    <Compile Include="Controls\FormControl\Form.cs" />
+    <Compile Include="Controls\FormField\FormField.cs" />
+    <Compile Include="Controls\FormControl\FormFieldData.cs" />
+    <Compile Include="Controls\FormControl\FormPanel.cs" />
+    <Compile Include="Controls\FormControl\FormRowData.cs" />
+    <Compile Include="Controls.Internal\HomeButton\HomeButton.cs" />
+    <Compile Include="Controls\LeftPanel\LeftPanel.cs" />
+    <Compile Include="Controls\MenuPanelControl\MenuPanel.cs" />
+    <Compile Include="Controls\MenuPanelControl\MenuPanelCategoryControl.xaml.cs">
+      <DependentUpon>MenuPanelCategoryControl.xaml</DependentUpon>
+    </Compile>
+    <None Include="Controls\SlidePanel\SlidePanel.xaml.cs">
+      <DependentUpon>SlidePanel.xaml</DependentUpon>
+    </None>
+    <Compile Include="Controls\SmartScaler\SmartScaler.cs" />
+    <Compile Include="Helpers\Binder.cs" />
+    <Compile Include="Helpers\LambdaHelper.cs" />
+    <Compile Include="Helpers\Parsers.cs" />
+    <Compile Include="Helpers\VenturaVisualTreeHelper.cs" />
+    <Compile Include="Shell\Repository.cs" />
+    <Compile Include="Controls.Internal\Shell\ShellFrame.xaml.cs">
+      <DependentUpon>ShellFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls.Internal\Shell\TabbedFrame.xaml.cs">
+      <DependentUpon>TabbedFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ClipHelper.cs" />
+    <Compile Include="Helpers\Command.cs" />
+    <Compile Include="Helpers\FullScreenHelper.cs" />
+    <Compile Include="Helpers\ViewmodelBase.cs" />
+    <Compile Include="Shell\FrameData.cs" />
+    <Compile Include="Navigation\Navigator.cs" />
+    <Compile Include="Helpers\VenturaApplication.cs" />
+    <Compile Include="Shell\ShellData.cs" />
+    <Compile Include="Shell\TabData.cs" />
+    <Compile Include="Helpers\ControlHelper.cs" />
+    <Compile Include="Controls.Internal\Shell\ShellFrame.Leftpanel.cs" />
+    <Compile Include="Controls\FormControl\NewLine.cs" />
+    <Compile Include="Helpers\Books.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls.Internal\BreadCrumb\BreadCrumb.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls.Internal\LeftTopCorner\LeftTopCorner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <None Include="Controls\HyperGrid\OriginalListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <Page Include="Controls.Internal\NavigationBarControl\NavigationBarControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls.Internal\Tabstrip\Tabstrip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ButtonBar\ButtonBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ButtonControls\MiniButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ButtonControls\SmartButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ButtonControls\SmartToggleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\FormButtonBar\FormButtonBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\HyperGridHeader\HyperGridHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HyperGridHeader\HyperGridHeaderCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HyperGrid\ListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\HyperGrid\HyperGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Input\InputBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SmartPagePanel\SmartPagePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SmartPage\SmartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\FormField\FormField.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\FormControl\Form.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls.Internal\HomeButton\HomeButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\LeftPanel\LeftPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\MenuPanelControl\MenuPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\MenuPanelControl\MenuPanelCategoryControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <None Include="Controls\SlidePanel\SlidePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <Page Include="Controls.Internal\Shell\ShellFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls.Internal\Shell\TabbedFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SmartScaler\SmartScaler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PopupDialogs\ConfirmDeleteDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\_TextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\AppDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.8</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls">
+      <Version>6.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Helpers\distinct_colors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controls\HyperGrid\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controls\Input\Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Themes\AboutStyling.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="IniFile\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

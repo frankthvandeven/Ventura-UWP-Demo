@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="24"
+   height="24"
+   viewBox="0 0 6.3499997 6.3500002"
+   version="1.1"
+   id="svg3719"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="Square44x44Logo.targetsize-24_altform-unplated.svg"
+   inkscape:export-filename="C:\Active\VenturaUWP\Projects\VenturaUWPDemo\Assets\Square44x44Logo.targetsize-24_altform-unplated.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs3713" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="44.8"
+     inkscape:cx="15.751959"
+     inkscape:cy="6.0931603"
+     inkscape:document-units="mm"
+     inkscape:current-layer="flowRoot3344"
+     showgrid="false"
+     inkscape:window-width="3840"
+     inkscape:window-height="2019"
+     inkscape:window-x="-14"
+     inkscape:window-y="-14"
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="true"
+     units="px" />
+  <metadata
+     id="metadata3716">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-290.65001)">
+    <g
+       id="flowRoot3344"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60.00000381px;line-height:125%;font-family:MicrogrammaDBolExt;-inkscape-font-specification:MicrogrammaDBolExt;letter-spacing:0px;word-spacing:0px;fill:#337ab7;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.22642475,0,0,0.23648879,-114.60955,258.54005)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4150"
+         d="m 507.09962,139.66707 h 6.04566 l 6.58806,13.43721 h 1.03186 l 6.5219,-13.43721 h 6.00598 l -8.81053,17.94695 h -8.45334 z"
+         style="stroke-width:0.45016488px;fill:#ff8c00;fill-opacity:1" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:Ventura.Controls">
+
+    <Style TargetType="controls:BreadCrumb">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:BreadCrumb">
+                    <ContentPresenter
+                        x:Name="Root"
+                        Margin="10,4,5,2"
+                        Foreground="Black">
+                        <Canvas Name="canvas" Height="16" />
+                    </ContentPresenter>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="controls:SingleCrumb">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:SingleCrumb">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Path
+                            x:Name="PathFirst"
+                            Grid.Column="0"
+                            Height="10"
+                            Margin="0,0,8,0"
+                            VerticalAlignment="Center"
+                            Data="M9.46481,7h0l3.33335,5L9.46481,17H6a1.00115,1.00115,0,0,1-1-1V8A1.00115,1.00115,0,0,1,6,7H9.46481m0-1H6A2,2,0,0,0,4,8v8a2,2,0,0,0,2,2H9.46481a1.00008,1.00008,0,0,0,.83207-.44531l3.33331-5a.99994.99994,0,0,0,0-1.10938l-3.33331-5A1.00008,1.00008,0,0,0,9.46481,6Zm8,1h0l2.59372,3.89056a1.99478,1.99478,0,0,1,0,2.21888L17.46481,17H13.86853l2.59369-3.89056a1.99474,1.99474,0,0,0,0-2.21882L13.86853,7h3.59628m0-1H13.86853a1,1,0,0,0-.83206,1.55469l2.59372,3.89062a.99994.99994,0,0,1,0,1.10938l-2.59372,3.89062A1,1,0,0,0,13.86853,18h3.59628a1.00008,1.00008,0,0,0,.83207-.44531l2.59371-3.89057a3,3,0,0,0,0-3.32824L18.29688,6.44531A1.00008,1.00008,0,0,0,17.46481,6Z"
+                            Fill="Black"
+                            Stretch="Uniform"
+                            Visibility="Visible" />
+                        <Path
+                            x:Name="PathSecond"
+                            Grid.Column="0"
+                            Height="10"
+                            Margin="8,0,8,0"
+                            VerticalAlignment="Center"
+                            Data="m17.46481,7l0,0l2.59372,3.89056a1.99478,1.99478 0 0 1 0,2.21888l-2.59372,3.89056l-3.59628,0l2.59369,-3.89056a1.99474,1.99474 0 0 0 0,-2.21882l-2.59369,-3.89062l3.59628,0m0,-1l-3.59628,0a1,1 0 0 0 -0.83206,1.55469l2.59372,3.89062a0.99994,0.99994 0 0 1 0,1.10938l-2.59372,3.89062a1,1 0 0 0 0.83206,1.55469l3.59628,0a1.00008,1.00008 0 0 0 0.83207,-0.44531l2.59371,-3.89057a3,3 0 0 0 0,-3.32824l-2.59371,-3.89057a1.00008,1.00008 0 0 0 -0.83207,-0.44531z"
+                            Fill="Black"
+                            Stretch="Uniform"
+                            Visibility="Collapsed" />
+                        <TextBlock
+                            x:Name="TextBlock"
+                            Grid.Column="1"
+                            Margin="0,-1,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="12"
+                            Text="{TemplateBinding Text}" />
+                    </Grid>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+</ResourceDictionary>

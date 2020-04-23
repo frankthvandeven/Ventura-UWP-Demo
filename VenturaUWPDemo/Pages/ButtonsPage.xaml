@@ -1,0 +1,53 @@
+﻿<Ventura:SmartPage
+    x:Class="Demo.Pages.ButtonsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:demo="using:Demo.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer Margin="40">
+        <StackPanel x:Name="stackpanel">
+            <TextBlock
+                Margin="0,0,0,20"
+                Style="{StaticResource TitleTextBlockStyle}"
+                Text="Standard buttons" />
+
+            <Ventura:ButtonClose Margin="0,10,0,0" />
+            <Ventura:ButtonCloseTab Margin="0,10,0,0" />
+
+            <Ventura:ButtonBack Margin="0,10,0,0" />
+            <Ventura:ButtonCancel Margin="0,10,0,0" />
+
+            <Ventura:ButtonSave Margin="0,10,0,0" />
+            <Ventura:ButtonConfirm Margin="0,10,0,0" />
+            <Ventura:ButtonDelete Margin="0,10,0,0" />
+            <Ventura:ButtonDeleteX Margin="0,10,0,0" />
+
+            <Ventura:ButtonSelect Margin="0,10,0,0" />
+            <Ventura:ButtonNew Margin="0,10,0,0" />
+            <Ventura:ButtonEdit Margin="0,10,0,0" />
+
+            <TextBlock
+                Margin="0,40,0,20"
+                Style="{StaticResource TitleTextBlockStyle}"
+                Text="Toggle button" />
+
+            <Ventura:SmartToggleButton x:Name="Toggler" Label="Auto save" Margin="0,10,0,0" />
+
+            <TextBlock
+                Margin="0,40,0,20"
+                Style="{StaticResource TitleTextBlockStyle}"
+                Text="Custom button" />
+
+            <demo:ButtonUploadToCloud Margin="0,10,0,0" />
+
+        </StackPanel>
+    </ScrollViewer>
+
+
+
+
+</Ventura:SmartPage>

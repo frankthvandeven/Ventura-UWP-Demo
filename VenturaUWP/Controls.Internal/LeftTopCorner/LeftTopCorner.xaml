@@ -1,0 +1,26 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls">
+
+    <Style TargetType="Ventura:LeftTopCorner">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Ventura:LeftTopCorner">
+                    <Grid x:Name="RootGrid">
+                        <Canvas x:Name="ShadowHost" />
+                        <Path
+                            x:Name="CornerShape"
+                            Margin="-3,-2,0,0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Data="M1.4995627,-2.1658681 C1.4995627,-0.16587231 2.0556792,83.833939 2.0556792,83.833939 2.0556792,83.833939 0.055239786,15.722531 42.166483,-1.943982"
+                            Fill="{StaticResource VenturaBlueBrush}"
+                            Stretch="Fill" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

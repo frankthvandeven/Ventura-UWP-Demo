@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  IgnorableNamespaces="uap mp">
+
+  <Identity
+    Name="59582GesoMalaysiaCorporat.VenturaUWPDemo"
+    Publisher="CN=BB54EA97-6B09-4402-BF6F-E91AFC7FA194"
+    Version="1.2.41.0" />
+
+  <mp:PhoneIdentity PhoneProductId="22ec9e75-a7b9-47ed-a104-00abc53345ee" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>Ventura UWP Demo</DisplayName>
+    <PublisherDisplayName>Frank Th. van de Ven</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="Demo.App">
+      <uap:VisualElements
+        DisplayName="Frank Th. van de Ven&apos;s - The Ventura System - The LOB Application Framework"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
+        Description="This is a demo for Ventura UWP. A complete system, including application framework, control suite and a 3-tier SQL framework for the hyper-productive development of LOB (Line of Business) applications."
+        BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" a:Optional="true" xmlns:a="http://schemas.microsoft.com/appx/manifest/uap/windows10/5" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+</Package>

@@ -1,0 +1,22 @@
+﻿<Ventura:SmartPage
+    x:Class="Demo.Pages.ColorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Ventura="using:Ventura.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer Margin="40">
+        <StackPanel x:Name="stackpanel">
+            <TextBlock
+                Margin="0,0,0,40"
+                Style="{StaticResource TitleTextBlockStyle}"
+                Text="Distinct colors as used for Tabs" />
+        </StackPanel>
+    </ScrollViewer>
+
+
+
+
+</Ventura:SmartPage>
