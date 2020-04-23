@@ -10,5 +10,7 @@ The VenturaUWPDemo project demonstrates the capabilities of the framework. The d
 The VenturaUWPDemo.venproj file contains the recordset definitions. Download and Install Ventura SQL from venturatools.com, and then open the venproj file with "Ventura SQL Studio."
 
 Frank Th. van de Ven
+
 Netherlands
+
 https://venturatools.com
