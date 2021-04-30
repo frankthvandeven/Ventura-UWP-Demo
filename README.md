@@ -12,9 +12,9 @@ The VenturaUWPDemo.venproj file contains the recordset definitions. Download and
 A compiled version of the Ventura UWP Demo app can be downloaded from the Microsoft Store:  
 https://www.microsoft.com/store/apps/9PJJR8DMJ6HQ
 
-The Ventura UWP product page on Ventura Tools:  
-https://venturatools.com/ProductVenturaUWP
+The Ventura UWP product page on sysdev.nl:  
+https://site.sysdev.nl/ProductVenturaUWP
 
 Frank Th. van de Ven  
 Netherlands  
-https://venturatools.com
+https://sysdev.nl
